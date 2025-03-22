@@ -5,22 +5,22 @@ import (
 	"go.arpabet.com/glue"
 )
 
-type RunCommand struct {
+type Run struct {
 	Parent cligo.CliGroup `cli:"group=cli"`
 	Name   string         `cli:"argument=name"`
 	Print  bool           `cli:"option=print,default=false,help=prints it"`
 }
 
-func (cmd *RunCommand) Command() string {
+func (cmd *Run) Command() string {
 	return "run"
 }
 
-func (cmd *RunCommand) Help() (string, string) {
+func (cmd *Run) Help() (string, string) {
 	return "Runs the program.", `This command runs the program by using cligo framework.
 This framework is a game changer in the CLI tools.`
 }
 
-func (cmd *RunCommand) Run(ctx glue.Context) error {
+func (cmd *Run) Run(ctx glue.Context) error {
 	if cmd.Print {
 		cligo.Echo("Invokes '%s' command with name '%s' argument", cmd.Command(), cmd.Name)
 	}
@@ -28,5 +28,5 @@ func (cmd *RunCommand) Run(ctx glue.Context) error {
 }
 
 func main() {
-	cligo.Main(cligo.Beans(&RunCommand{}))
+	cligo.Main(cligo.Beans(&Run{}))
 }
