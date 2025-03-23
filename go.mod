@@ -7,8 +7,8 @@ toolchain go1.24.1
 //replace go.arpabet.com/cligo => ../cligo
 
 require (
-	go.arpabet.com/cligo v0.1.2
-	go.arpabet.com/glue v1.1.2
+	go.arpabet.com/cligo v0.1.3
+	go.arpabet.com/glue v1.2.0
 )
 
 require (
